@@ -1,0 +1,11 @@
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\bin\Debug\Aplicación financiera para estudiantes.exe.config
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\bin\Debug\Aplicación financiera para estudiantes.exe
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\bin\Debug\Aplicación financiera para estudiantes.pdb
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación financiera para estudiantes.csproj.AssemblyReference.cache
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación_financiera_para_estudiantes.Properties.Resources.resources
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación financiera para estudiantes.csproj.GenerateResource.cache
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación financiera para estudiantes.csproj.CoreCompileInputs.cache
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación financiera para estudiantes.exe
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación financiera para estudiantes.pdb
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación financiera para estudiantes.exe.config
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación_financiera_para_estudiantes.FrmPresupuesto.resources
