@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace Aplicación_financiera_para_estudiantes
 {
     public partial class FrmPresupuesto : Form
-    {
-        private string tipoPresupuesto;
+    {      
 
         public FrmPresupuesto()
         {
@@ -28,13 +29,13 @@ namespace Aplicación_financiera_para_estudiantes
             this.dgvPresupuestos.Rows.Add("Entretenimiento");
             this.dgvPresupuestos.Rows.Add("Salud");
             this.dgvPresupuestos.Rows.Add("Otros");
+
+            CargarPresupuesto();
+           
         }
 
         private void dgvPresupuestos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
-
 
         }
 
@@ -42,20 +43,16 @@ namespace Aplicación_financiera_para_estudiantes
         {
             if (e.ColumnIndex == dgvPresupuestos.Columns["Presupuesto"].Index || e.ColumnIndex == dgvPresupuestos.Columns["Gasto"].Index)
             {
-                try
-                {
-                    decimal presupuesto = Convert.ToDecimal(dgvPresupuestos.Rows[e.RowIndex].Cells["Presupuesto"].Value);
-                    decimal gasto = Convert.ToDecimal(dgvPresupuestos.Rows[e.RowIndex].Cells["Gasto"].Value);
+                decimal presupuesto = 0, gasto = 0;
 
-                    dgvPresupuestos.Rows[e.RowIndex].Cells["Diferencia"].Value = presupuesto - gasto;
-                }
-                catch
-                {
-                    dgvPresupuestos.Rows[e.RowIndex].Cells["Diferencia"].Value = "0.00";
-                }
-            }
+                decimal.TryParse(dgvPresupuestos.Rows[e.RowIndex].Cells["Presupuesto"].Value?.ToString(), out presupuesto);
+                decimal.TryParse(dgvPresupuestos.Rows[e.RowIndex].Cells["Gasto"].Value?.ToString(), out gasto);
+
+                dgvPresupuestos.Rows[e.RowIndex].Cells["Diferencia"].Value = presupuesto - gasto;
+            } 
 
             CalcularTotales();
+            GuardarPresupuesto();
         }
 
         private void CalcularTotales()
@@ -83,8 +80,7 @@ namespace Aplicación_financiera_para_estudiantes
         {
             if (rdoMensual.Checked)
             {
-                tipoPresupuesto = "Mensual";
-                AjustarPresupuestoPorTipo();
+                AjustarPresupuesto("mensual");
             }
         }
 
@@ -92,24 +88,94 @@ namespace Aplicación_financiera_para_estudiantes
         {
             if (rdoSemanal.Checked)
             {
-                tipoPresupuesto = "Semanal";
-                AjustarPresupuestoPorTipo();
+                AjustarPresupuesto("Semanal");
             }
         }
 
-        private void AjustarPresupuestoPorTipo()
+        private void AjustarPresupuesto(string tipo)
         {
             foreach (DataGridViewRow row in dgvPresupuestos.Rows)
             {
                 if (!row.IsNewRow)
                 {
-                    decimal valorBase = Convert.ToDecimal(row.Cells["Presupuesto"].Tag ?? 0);
-                    row.Cells["Presupuesto"].Value = tipoPresupuesto == "Mensual" ? valorBase * 4 : valorBase;
+                    decimal baseValue = Convert.ToDecimal(row.Cells["Presupuesto"].Value);
+
+                    if (tipo == "mensual")
+                        row.Cells["Presupuesto"].Value = baseValue * 4;
+                    else
+                        row.Cells["Presupuesto"].Value = baseValue / 4;
                 }
             }
             CalcularTotales();
 
         }
-    }
-        
+
+
+        public class ItemPresupuesto
+        {
+            public string Categoria { get; set; }
+            public decimal Presupuesto { get; set; }
+            public decimal Gasto { get; set; }
+            public decimal Diferencia { get; set; }
+        }
+
+        private List<ItemPresupuesto> ObtenerListaPresupuesto()
+        {
+            List<ItemPresupuesto> lista = new List<ItemPresupuesto>();
+
+            foreach (DataGridViewRow row in dgvPresupuestos.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    lista.Add(new ItemPresupuesto
+                    {
+                        Categoria = row.Cells["Categoria"].Value?.ToString(),
+                        Presupuesto = Convert.ToDecimal(row.Cells["Presupuesto"].Value),
+                        Gasto = Convert.ToDecimal(row.Cells["Gasto"].Value),
+                        Diferencia = Convert.ToDecimal(row.Cells["Diferencia"].Value)
+                    });
+                }
+            }
+
+            return lista;
+        }
+
+        private void GuardarPresupuesto()
+        {
+            string ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "presupuesto.json");
+
+            var lista = ObtenerListaPresupuesto(); 
+            string json = JsonConvert.SerializeObject(lista, Formatting.Indented);
+
+            File.WriteAllText(ruta, json);
+        }
+
+
+        private void CargarPresupuesto()
+        {
+            string ruta = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "presupuesto.json");
+
+            if (!File.Exists(ruta))
+                return;
+
+            var lista = JsonConvert.DeserializeObject<List<ItemPresupuesto>>(File.ReadAllText(ruta));
+            dgvPresupuestos.Rows.Clear();
+
+            foreach (var item in lista)
+            {
+                dgvPresupuestos.Rows.Add(item.Categoria, item.Presupuesto, item.Gasto, item.Diferencia);
+            }
+
+        }
+
+        private void dgvPresupuestos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true; 
+                SendKeys.Send("{TAB}"); 
+            }
+        }
+    }    
 }
+

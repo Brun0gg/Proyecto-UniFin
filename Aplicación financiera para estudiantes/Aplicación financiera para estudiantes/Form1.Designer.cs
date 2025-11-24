@@ -151,6 +151,7 @@
             this.dgvPresupuestos.TabIndex = 8;
             this.dgvPresupuestos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPresupuestos_CellContentClick);
             this.dgvPresupuestos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPresupuestos_CellEndEdit);
+            this.dgvPresupuestos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvPresupuestos_KeyDown);
             // 
             // Categoria
             // 
