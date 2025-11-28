@@ -1,6 +1,6 @@
 ﻿namespace Aplicación_financiera_para_estudiantes
 {
-    partial class Gastos
+    partial class FrmGastos
     {
         /// <summary>
         /// Required designer variable.
@@ -30,96 +30,212 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtNombreGasto = new System.Windows.Forms.TextBox();
+            this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.btnAgregarGasto = new System.Windows.Forms.Button();
+            this.btnEliminarGasto = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btncerrar = new System.Windows.Forms.Button();
+            this.dgvGastos = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Monto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGastos)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 102);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(39, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(84, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 27);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(38, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.Size = new System.Drawing.Size(246, 29);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Nuevo gasto";
+            this.label2.Text = "Registros de gastos";
             // 
-            // textBox1
+            // txtNombreGasto
             // 
-            this.textBox1.Location = new System.Drawing.Point(106, 99);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtNombreGasto.Location = new System.Drawing.Point(140, 106);
+            this.txtNombreGasto.Name = "txtNombreGasto";
+            this.txtNombreGasto.Size = new System.Drawing.Size(181, 20);
+            this.txtNombreGasto.TabIndex = 2;
             // 
-            // comboBox1
+            // cmbCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(106, 143);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 3;
+            this.cmbCategoria.FormattingEnabled = true;
+            this.cmbCategoria.Items.AddRange(new object[] {
+            "Alimentación",
+            "Transporte",
+            "Vivienda",
+            "Educación",
+            "Entretenimineto",
+            "Salud",
+            "Otros"});
+            this.cmbCategoria.Location = new System.Drawing.Point(140, 197);
+            this.cmbCategoria.Name = "cmbCategoria";
+            this.cmbCategoria.Size = new System.Drawing.Size(181, 21);
+            this.cmbCategoria.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 146);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(39, 197);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(95, 24);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Categoria";
+            this.label3.Text = "Categoria:";
             // 
-            // dateTimePicker1
+            // dtpFecha
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(106, 186);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(83, 20);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dtpFecha.Location = new System.Drawing.Point(140, 238);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(181, 20);
+            this.dtpFecha.TabIndex = 5;
             // 
-            // button1
+            // btnAgregarGasto
             // 
-            this.button1.Location = new System.Drawing.Point(409, 268);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = " ";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAgregarGasto.Location = new System.Drawing.Point(127, 300);
+            this.btnAgregarGasto.Name = "btnAgregarGasto";
+            this.btnAgregarGasto.Size = new System.Drawing.Size(112, 39);
+            this.btnAgregarGasto.TabIndex = 6;
+            this.btnAgregarGasto.Text = "agregar";
+            this.btnAgregarGasto.UseVisualStyleBackColor = true;
+            this.btnAgregarGasto.Click += new System.EventHandler(this.btnAgregarGasto_Click);
             // 
-            // button2
+            // btnEliminarGasto
             // 
-            this.button2.Location = new System.Drawing.Point(522, 268);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnEliminarGasto.Location = new System.Drawing.Point(426, 300);
+            this.btnEliminarGasto.Name = "btnEliminarGasto";
+            this.btnEliminarGasto.Size = new System.Drawing.Size(112, 39);
+            this.btnEliminarGasto.TabIndex = 7;
+            this.btnEliminarGasto.Text = "Eliminar gasto";
+            this.btnEliminarGasto.UseVisualStyleBackColor = true;
+            this.btnEliminarGasto.Click += new System.EventHandler(this.btnEliminarGasto_Click);
             // 
-            // Gastos
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(39, 234);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 24);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Fecha:";
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.Location = new System.Drawing.Point(140, 154);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(181, 20);
+            this.txtMonto.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(39, 150);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 24);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Monto:";
+            // 
+            // btncerrar
+            // 
+            this.btncerrar.Location = new System.Drawing.Point(680, 300);
+            this.btncerrar.Name = "btncerrar";
+            this.btncerrar.Size = new System.Drawing.Size(112, 39);
+            this.btncerrar.TabIndex = 11;
+            this.btncerrar.Text = "Cerrar";
+            this.btncerrar.UseVisualStyleBackColor = true;
+            this.btncerrar.Click += new System.EventHandler(this.btncerrar_Click);
+            // 
+            // dgvGastos
+            // 
+            this.dgvGastos.AllowUserToAddRows = false;
+            this.dgvGastos.AllowUserToDeleteRows = false;
+            this.dgvGastos.AllowUserToResizeColumns = false;
+            this.dgvGastos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGastos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Monto,
+            this.Categoria,
+            this.Fecha});
+            this.dgvGastos.Location = new System.Drawing.Point(397, 85);
+            this.dgvGastos.MultiSelect = false;
+            this.dgvGastos.Name = "dgvGastos";
+            this.dgvGastos.ReadOnly = true;
+            this.dgvGastos.RowHeadersVisible = false;
+            this.dgvGastos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvGastos.Size = new System.Drawing.Size(437, 197);
+            this.dgvGastos.TabIndex = 12;
+            // 
+            // Nombre
+            // 
+            this.Nombre.Frozen = true;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 69;
+            // 
+            // Monto
+            // 
+            this.Monto.HeaderText = "Monto";
+            this.Monto.Name = "Monto";
+            this.Monto.ReadOnly = true;
+            this.Monto.Width = 62;
+            // 
+            // Categoria
+            // 
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 77;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 62;
+            // 
+            // FrmGastos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.ClientSize = new System.Drawing.Size(871, 486);
+            this.Controls.Add(this.dgvGastos);
+            this.Controls.Add(this.btncerrar);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtMonto);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnEliminarGasto);
+            this.Controls.Add(this.btnAgregarGasto);
+            this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmbCategoria);
+            this.Controls.Add(this.txtNombreGasto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Gastos";
+            this.Name = "FrmGastos";
             this.Text = "Gastos";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGastos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,11 +245,20 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtNombreGasto;
+        private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.Button btnAgregarGasto;
+        private System.Windows.Forms.Button btnEliminarGasto;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtMonto;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btncerrar;
+        private System.Windows.Forms.DataGridView dgvGastos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
     }
 }

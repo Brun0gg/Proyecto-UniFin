@@ -16,7 +16,7 @@ namespace Aplicación_financiera_para_estudiantes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPresupuesto());
+            Application.Run(new FrmMenuPrincipal());
         }
     }
 }

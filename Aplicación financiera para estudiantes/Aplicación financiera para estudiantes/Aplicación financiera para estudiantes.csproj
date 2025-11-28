@@ -61,6 +61,12 @@
     <Compile Include="Gastos.Designer.cs">
       <DependentUpon>Gastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu principal.Designer.cs">
+      <DependentUpon>Menu principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -68,6 +74,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gastos.resx">
       <DependentUpon>Gastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu principal.resx">
+      <DependentUpon>Menu principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

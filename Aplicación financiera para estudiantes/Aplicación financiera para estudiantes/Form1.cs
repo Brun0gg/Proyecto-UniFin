@@ -176,6 +176,30 @@ namespace Aplicación_financiera_para_estudiantes
                 SendKeys.Send("{TAB}"); 
             }
         }
+        public void AgregarGasto(string categoria, decimal monto)
+        {
+            foreach (DataGridViewRow row in dgvPresupuestos.Rows)
+            {
+                if (row.Cells["Categoria"].Value.ToString() == categoria)
+                {
+                    decimal gastoActual = Convert.ToDecimal(row.Cells["Gasto"].Value);
+                    row.Cells["Gasto"].Value = gastoActual + monto;
+
+                    // Actualizar diferencia
+                    decimal presupuesto = Convert.ToDecimal(row.Cells["Presupuesto"].Value);
+                    row.Cells["Diferencia"].Value = presupuesto - (gastoActual + monto);
+
+                    CalcularTotales();
+                    return;
+                }
+            }
+        }
+
+        private void btnAbrirGastos_Click(object sender, EventArgs e)
+        {
+            FrmGastos frm = new FrmGastos(this); 
+            frm.ShowDialog();
+        }
     }    
 }
 

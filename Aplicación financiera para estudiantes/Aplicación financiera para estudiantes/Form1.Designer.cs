@@ -44,6 +44,8 @@
             this.txtTotalPresupuesto = new System.Windows.Forms.TextBox();
             this.txtTotalDiferencia = new System.Windows.Forms.TextBox();
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAbrirGastos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPresupuestos)).BeginInit();
             this.SuspendLayout();
@@ -202,11 +204,32 @@
             this.txtTotalGasto.Size = new System.Drawing.Size(161, 29);
             this.txtTotalGasto.TabIndex = 12;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(619, 576);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(8, 8);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnAbrirGastos
+            // 
+            this.btnAbrirGastos.Location = new System.Drawing.Point(632, 557);
+            this.btnAbrirGastos.Name = "btnAbrirGastos";
+            this.btnAbrirGastos.Size = new System.Drawing.Size(106, 37);
+            this.btnAbrirGastos.TabIndex = 14;
+            this.btnAbrirGastos.Text = "Gastos";
+            this.btnAbrirGastos.UseVisualStyleBackColor = true;
+            this.btnAbrirGastos.Click += new System.EventHandler(this.btnAbrirGastos_Click);
+            // 
             // FrmPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 622);
+            this.Controls.Add(this.btnAbrirGastos);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTotalGasto);
             this.Controls.Add(this.txtTotalDiferencia);
             this.Controls.Add(this.txtTotalPresupuesto);
@@ -244,6 +267,8 @@
         private System.Windows.Forms.TextBox txtTotalPresupuesto;
         private System.Windows.Forms.TextBox txtTotalDiferencia;
         private System.Windows.Forms.TextBox txtTotalGasto;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAbrirGastos;
     }
 }
 
