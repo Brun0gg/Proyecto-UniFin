@@ -26,11 +26,21 @@ namespace Aplicación_financiera_para_estudiantes
         private void btnGastos_Click(object sender, EventArgs e)
         {
             FrmPresupuesto frmPres = new FrmPresupuesto();
-            frmPres.Show(); // mostramos el formulario de presupuesto
+            frmPres.Show(); 
 
-            // Abrimos FrmGastos y le pasamos la referencia
+          
             FrmGastos frmG = new FrmGastos(frmPres);
             frmG.ShowDialog();
+        }
+
+        private void btnSalirMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
