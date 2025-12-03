@@ -42,5 +42,11 @@ namespace Aplicación_financiera_para_estudiantes
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            FrmReporte frm = new FrmReporte();
+            frm.ShowDialog();
+        }
     }
 }

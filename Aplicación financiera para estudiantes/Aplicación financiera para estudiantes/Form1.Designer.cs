@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.rdoMensual = new System.Windows.Forms.RadioButton();
-            this.rdoSemanal = new System.Windows.Forms.RadioButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPresupuesto));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblPresupuesto = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,50 +45,16 @@
             this.txtTotalPresupuesto = new System.Windows.Forms.TextBox();
             this.txtTotalDiferencia = new System.Windows.Forms.TextBox();
             this.txtTotalGasto = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnAbrirGastos = new System.Windows.Forms.Button();
+            this.btnSalirMenu = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPresupuestos)).BeginInit();
             this.SuspendLayout();
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(51, 221);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(687, 23);
-            this.progressBar1.TabIndex = 1;
-            // 
-            // rdoMensual
-            // 
-            this.rdoMensual.AutoSize = true;
-            this.rdoMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoMensual.Location = new System.Drawing.Point(543, 19);
-            this.rdoMensual.Name = "rdoMensual";
-            this.rdoMensual.Size = new System.Drawing.Size(100, 28);
-            this.rdoMensual.TabIndex = 2;
-            this.rdoMensual.TabStop = true;
-            this.rdoMensual.Text = "Mensual";
-            this.rdoMensual.UseVisualStyleBackColor = true;
-            this.rdoMensual.CheckedChanged += new System.EventHandler(this.rdoMensual_CheckedChanged);
-            // 
-            // rdoSemanal
-            // 
-            this.rdoSemanal.AutoSize = true;
-            this.rdoSemanal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoSemanal.Location = new System.Drawing.Point(649, 20);
-            this.rdoSemanal.Name = "rdoSemanal";
-            this.rdoSemanal.Size = new System.Drawing.Size(102, 28);
-            this.rdoSemanal.TabIndex = 3;
-            this.rdoSemanal.TabStop = true;
-            this.rdoSemanal.Text = "Semanal";
-            this.rdoSemanal.UseVisualStyleBackColor = true;
-            this.rdoSemanal.CheckedChanged += new System.EventHandler(this.rdoSemanal_CheckedChanged);
-            // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.lblPresupuesto);
-            this.panel1.Controls.Add(this.rdoMensual);
-            this.panel1.Controls.Add(this.rdoSemanal);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(760, 66);
@@ -97,6 +64,7 @@
             // 
             this.lblPresupuesto.AutoSize = true;
             this.lblPresupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPresupuesto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.lblPresupuesto.Location = new System.Drawing.Point(34, 20);
             this.lblPresupuesto.Name = "lblPresupuesto";
             this.lblPresupuesto.Size = new System.Drawing.Size(241, 25);
@@ -106,7 +74,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(498, 161);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(240, 25);
@@ -116,8 +86,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(294, 161);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(303, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 25);
             this.label2.TabIndex = 6;
@@ -126,7 +98,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(27, 161);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(185, 25);
@@ -139,16 +113,40 @@
             this.dgvPresupuestos.AllowUserToDeleteRows = false;
             this.dgvPresupuestos.AllowUserToResizeColumns = false;
             this.dgvPresupuestos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPresupuestos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPresupuestos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPresupuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPresupuestos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Categoria,
             this.Presupuesto,
             this.Gasto,
             this.Diferencia});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(42)))), ((int)(((byte)(58)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(173)))), ((int)(((byte)(169)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPresupuestos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPresupuestos.EnableHeadersVisualStyles = false;
+            this.dgvPresupuestos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(61)))), ((int)(((byte)(98)))));
             this.dgvPresupuestos.Location = new System.Drawing.Point(51, 273);
             this.dgvPresupuestos.Name = "dgvPresupuestos";
             this.dgvPresupuestos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvPresupuestos.RowHeadersVisible = false;
             this.dgvPresupuestos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(42)))), ((int)(((byte)(58)))));
+            this.dgvPresupuestos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPresupuestos.RowTemplate.Height = 35;
+            this.dgvPresupuestos.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgvPresupuestos.Size = new System.Drawing.Size(687, 266);
             this.dgvPresupuestos.TabIndex = 8;
             this.dgvPresupuestos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPresupuestos_CellContentClick);
@@ -190,7 +188,7 @@
             // 
             this.txtTotalDiferencia.Enabled = false;
             this.txtTotalDiferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalDiferencia.Location = new System.Drawing.Point(539, 106);
+            this.txtTotalDiferencia.Location = new System.Drawing.Point(555, 106);
             this.txtTotalDiferencia.Name = "txtTotalDiferencia";
             this.txtTotalDiferencia.Size = new System.Drawing.Size(161, 29);
             this.txtTotalDiferencia.TabIndex = 11;
@@ -199,37 +197,48 @@
             // 
             this.txtTotalGasto.Enabled = false;
             this.txtTotalGasto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalGasto.Location = new System.Drawing.Point(299, 106);
+            this.txtTotalGasto.Location = new System.Drawing.Point(308, 106);
             this.txtTotalGasto.Name = "txtTotalGasto";
             this.txtTotalGasto.Size = new System.Drawing.Size(161, 29);
             this.txtTotalGasto.TabIndex = 12;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(619, 576);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(8, 8);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // btnAbrirGastos
             // 
-            this.btnAbrirGastos.Location = new System.Drawing.Point(632, 557);
+            this.btnAbrirGastos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnAbrirGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrirGastos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAbrirGastos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnAbrirGastos.Location = new System.Drawing.Point(384, 561);
             this.btnAbrirGastos.Name = "btnAbrirGastos";
-            this.btnAbrirGastos.Size = new System.Drawing.Size(106, 37);
+            this.btnAbrirGastos.Size = new System.Drawing.Size(153, 37);
             this.btnAbrirGastos.TabIndex = 14;
             this.btnAbrirGastos.Text = "Gastos";
-            this.btnAbrirGastos.UseVisualStyleBackColor = true;
+            this.btnAbrirGastos.UseVisualStyleBackColor = false;
             this.btnAbrirGastos.Click += new System.EventHandler(this.btnAbrirGastos_Click);
+            // 
+            // btnSalirMenu
+            // 
+            this.btnSalirMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.btnSalirMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalirMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSalirMenu.ForeColor = System.Drawing.Color.Red;
+            this.btnSalirMenu.Location = new System.Drawing.Point(585, 562);
+            this.btnSalirMenu.Name = "btnSalirMenu";
+            this.btnSalirMenu.Size = new System.Drawing.Size(153, 36);
+            this.btnSalirMenu.TabIndex = 15;
+            this.btnSalirMenu.Text = "Cerrar";
+            this.btnSalirMenu.UseVisualStyleBackColor = false;
+            this.btnSalirMenu.Click += new System.EventHandler(this.btnSalirMenu_Click);
             // 
             // FrmPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(42)))), ((int)(((byte)(58)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 622);
+            this.Controls.Add(this.btnSalirMenu);
             this.Controls.Add(this.btnAbrirGastos);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtTotalGasto);
             this.Controls.Add(this.txtTotalDiferencia);
             this.Controls.Add(this.txtTotalPresupuesto);
@@ -238,7 +247,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.progressBar1);
             this.Name = "FrmPresupuesto";
             this.Text = "Presupuesto";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -251,9 +259,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.RadioButton rdoMensual;
-        private System.Windows.Forms.RadioButton rdoSemanal;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblPresupuesto;
         private System.Windows.Forms.Label label1;
@@ -267,8 +272,8 @@
         private System.Windows.Forms.TextBox txtTotalPresupuesto;
         private System.Windows.Forms.TextBox txtTotalDiferencia;
         private System.Windows.Forms.TextBox txtTotalGasto;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnAbrirGastos;
+        private System.Windows.Forms.Button btnSalirMenu;
     }
 }
 

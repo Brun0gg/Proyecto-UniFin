@@ -14,3 +14,4 @@ C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación 
 C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicaci.0AB90192.Up2Date
 C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación_financiera_para_estudiantes.FrmGastos.resources
 C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación_financiera_para_estudiantes.FrmMenuPrincipal.resources
+C:\Users\bruno\source\repos\Aplicación financiera para estudiantes\Aplicación financiera para estudiantes\obj\Debug\Aplicación_financiera_para_estudiantes.FrmReporte.resources
